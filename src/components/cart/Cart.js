@@ -11,7 +11,6 @@ export const Cart = (props) => {
   const [checkout, setCheckout] = useState(false);
 
   useEffect(() => {
-    console.log("checkoutitems", props.checkoutItems);
     calculateTotalPrice();
   }, [props.checkoutItems]);
 
@@ -31,6 +30,7 @@ export const Cart = (props) => {
   for (let item in props.checkoutItems) {
     cartItems.push(
       <ProductDetail
+        Key={item.id}
         inCart={true}
         product={props.checkoutItems[item]}
         removeFromCart={props.removeFromCart}
@@ -47,8 +47,6 @@ export const Cart = (props) => {
       </div>
       {Object.keys(cartItems).length > 0 && !checkout && (
         <div>
-          <div className="total-price">Total Price: {totalPrice}</div>
-
           {cartItems.map((item) => item)}
         </div>
       )}
@@ -56,7 +54,8 @@ export const Cart = (props) => {
         <center className="mt-5">Empty</center>
       )}
 
-      <div className="checkout-button mt-5 mb-5">
+      <div className="checkout-button mt-5">
+        <div className="total-price">Total Price: ${totalPrice}</div>
         <Button
           className="mt-5 mb-5 bg-success"
           onClick={() => toggleCheckout()}

@@ -23,13 +23,11 @@ function App() {
     if (localStorage.getItem("checkout")) {
       setCheckoutItems(JSON.parse(localStorage.getItem("checkout")));
     }
-    console.log("LocalStorage Checkout", localStorage.getItem("checkout"));
     const url = "https://fakestoreapi.com/products";
     axios
       .get(url)
       .then((res) => {
         setProducts(res.data);
-        console.log(res);
       })
       .catch((error) => {
         setError(error);
@@ -95,7 +93,7 @@ function App() {
 
   return (
     <div className="App container">
-      <Navbar bg="light" expand="lg" fixed="top" className="container mb-5">
+      <Navbar bg="light" expand="lg" fixed="top" className="main-nav mb-5">
         <Navbar.Brand>
           <Nav.Link onClick={() => showHome()}>Check-Out</Nav.Link>
         </Navbar.Brand>
