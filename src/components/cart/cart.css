@@ -1,0 +1,31 @@
+#cart{
+    margin-top: 5%;
+    min-height: 80vh;
+    position: relative;
+}
+
+.payment-gateway{
+    width: 50%;
+    margin: 20% auto auto auto;
+
+}
+.total-price {
+    position: fixed;
+    background: red;
+    box-shadow: darkgray;
+    height: 100px;
+    width: 100px;
+    z-index: 20;
+    border-radius: 50%;
+    padding: 1em;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 700;
+}
+
+.checkout-button {
+    text-align: center;
+}

@@ -1,0 +1,40 @@
+.product-info{
+    text-align: center;
+}
+.product-title{
+    margin-top: 5px;
+    height: 30px;
+    text-align: center;
+}
+.product-price{
+    color: grey;
+    font-size: 1.2em;
+    text-align: center;
+}
+.product-image{
+    height: 300px;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+.product-footer{
+    display: flex;
+    flex-direction: column;
+    padding: auto 2em;
+    justify-content: space-around;
+}
+.product-footer button{
+    border: none !important;
+    width: fit-content;
+    margin: auto;
+}
+  
+@media(min-width:768px) {
+    .product-footer{
+        flex-direction: row;
+    }
+    .product-price{
+        text-align: left;
+    }
+}

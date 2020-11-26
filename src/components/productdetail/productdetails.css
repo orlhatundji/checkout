@@ -1,0 +1,32 @@
+.product-details {
+    margin-top: 15%;
+}
+.product-details img {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.product-details .product-title {
+    height: fit-content;
+}
+
+.return-button {
+    float: right;
+    border: none;
+    background: red !important;
+}
+
+.qty-change{
+    width: 3em;
+    border: none;
+    font-weight: 900;
+    font-size: 1.1em;
+}
+.qty-buttons .qty-change:nth-child(2) {
+    margin-left: 20px;
+}
+
+.item-count {
+    padding: 1em;    
+}
