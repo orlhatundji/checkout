@@ -42,27 +42,27 @@ export const Cart = (props) => {
 
   return (
     <div id="cart">
-      <div className='payment-gateway'>
-        {checkout && <Checkout description="Many" value={totalPrice}/>}
+      <div className="payment-gateway">
+        {checkout && <Checkout description="Many" value={totalPrice} />}
       </div>
       {Object.keys(cartItems).length > 0 && !checkout && (
-        <div>
-          {cartItems.map((item) => item)}
-        </div>
+        <div>{cartItems.map((item) => item)}</div>
       )}
       {Object.keys(cartItems).length == 0 && !checkout && (
         <center className="mt-5">Empty</center>
       )}
 
-      <div className="checkout-button mt-5">
-        <div className="total-price">Total Price: ${totalPrice}</div>
-        <Button
-          className="mt-5 mb-5 bg-success"
-          onClick={() => toggleCheckout()}
-        >
-          {checkout ? "GO BACK" : "CHECKOUT"}
-        </Button>
-      </div>
+      {Object.keys(cartItems).length > 0 &&
+        <div className="checkout-button mt-5">
+          <div className="total-price">Total Price: ${totalPrice}</div>
+          <Button
+            className="mt-5 mb-5 bg-success"
+            onClick={() => toggleCheckout()}
+          >
+            {checkout ? "GO BACK" : "CHECKOUT"}
+          </Button>
+        </div>
+      }
     </div>
   );
 };
